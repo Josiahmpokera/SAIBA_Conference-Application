@@ -17,7 +17,8 @@ class MyApplication extends StatefulWidget {
 class _MyApplicationState extends State<MyApplication> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  const MaterialApp(
+      debugShowCheckedModeBanner: false,
      // home: SignUp(),
       home: HomeScreen(),
     );
