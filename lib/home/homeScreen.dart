@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'MainEventScreen.dart';
+import 'MainSaveScreen.dart';
+import 'mainHomeScreen.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -17,10 +21,10 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  List<Widget> _screens = [
-    MainHomeScreen(),
-    Text("Screen Events"),
-    Text("Screen Save"),
+  final List<Widget> _screens = const [
+    MainSaveScreen(),
+    MainEventScreen(),
+    MainSaveScreen(),
   ];
 
   List<BottomNavigationBarItem>  _bottomItems =  [
@@ -51,20 +55,6 @@ class _HomeScreenState extends State<HomeScreen> {
      ),
       body: _screens.elementAt(_selected),
     );
-  }
-}
-
-class MainHomeScreen extends StatefulWidget {
-  const MainHomeScreen({Key? key}) : super(key: key);
-
-  @override
-  State<MainHomeScreen> createState() => _MainHomeScreenState();
-}
-
-class _MainHomeScreenState extends State<MainHomeScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
 
