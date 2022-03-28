@@ -25,8 +25,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> _screens = const [
     MainSaveScreen(),
+    SavedScreen(),
     EventInside(),
-    ScheduleScreen(),
   ];
 
   final List<BottomNavigationBarItem>  _bottomItems =  [
