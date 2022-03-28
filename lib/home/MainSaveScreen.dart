@@ -14,13 +14,15 @@ class _MainSaveScreenState extends State<MainSaveScreen> {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
-      children: [
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: const [
         Padding(
           padding: EdgeInsets.only(
-            top: MediaQuery.of(context).padding.top + kToolbarHeight,
+            //top: MediaQuery.of(context).padding.top + kToolbarHeight,
+            top: 30,
             left: 40
           ),
-          child: const Text("Find your \nnext Event. ",
+          child:  Text("Find your \nnext Event. ",
             style: TextStyle(color: Colors.black,
                 fontWeight: FontWeight.bold,
                 letterSpacing: 1.3,
@@ -28,7 +30,7 @@ class _MainSaveScreenState extends State<MainSaveScreen> {
                 fontSize: 25),
           ),
         ),
-        const Expanded(
+         Expanded(
             child: PageViewWidget()
         ),
       ],
@@ -115,26 +117,37 @@ class _PageViewWidgetState extends State<PageViewWidget> {
                         child: Column(
                           children: [
                             Container(
-                              margin: EdgeInsets.all(10),
+                              margin: const EdgeInsets.all(10),
                               child: Row(
                                 children: [
-                                  Icon(Icons.location_on, color: Colors.red, size: 34,),
+                                 const Icon(Icons.location_on, color: Colors.red, size: 34,),
                                   Container(
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(3),
-                                      color: Colors.orange
+                                      color: const Color(0xF1BE0652)
                                     ),
                                     child: const Padding(
-                                      padding: const EdgeInsets.all(8.0),
+                                      padding:  EdgeInsets.all(8.0),
                                       child: Text("Mwl. Nyerere University Hall", style: TextStyle(color: Colors.white),),
                                     ),
                                   ),
                                 ],
                               ),
                             ),
-                            Expanded(
+                            const Expanded(
                               child: Text("Tanzania Programmer (Hackathon)", style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),),
-                            )
+                            ),
+                            Container(
+                              margin: const EdgeInsets.all(10),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.multitrack_audio_sharp, color: Colors.pink,size: 34,),
+                                 Expanded(child:  Text("Dr. Julian Mkayega", style: TextStyle(color: Colors.white, fontSize: 18),
+                                 ),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ],
                         ),
                    ),

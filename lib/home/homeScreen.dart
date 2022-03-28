@@ -49,13 +49,33 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-     /*appBar: AppBar(
+     appBar: AppBar(
        elevation: 0,
        backgroundColor: const Color(0xF1023F48),
        centerTitle: true,
-       title: const Text("SAIBA Conference", style: TextStyle(fontFamily: 'Economica'),),
+       title:  Row(
+         mainAxisAlignment: MainAxisAlignment.center,
+         children: [
+           Container(
+             color: Colors.pink,
+             child: Padding(
+               padding: const EdgeInsets.all(4.0),
+               child: Text("SAIBA", style: TextStyle(fontFamily: 'Economica'),
+           ),
+             ),
+           ),
+           SizedBox(width: 3,),
+           Container(
+             child: Text("Conference", style: TextStyle(fontFamily: 'Economica'),),
+           ),
+         ],
+       ),
+       actions: [
+         IconButton(onPressed: (){},
+             icon: const Icon(Icons.settings, color: Colors.white,))
+       ],
      ),
-     */
+
 
      bottomNavigationBar: BottomNavigationBar(
        items: _bottomItems,
