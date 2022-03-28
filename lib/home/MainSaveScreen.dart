@@ -106,13 +106,39 @@ class _PageViewWidgetState extends State<PageViewWidget> {
                 children: <Widget>[
                   Image.asset('assets/shot.png',
                     width: MediaQuery.of(context).size.width, fit: BoxFit.cover,),
-                  const Positioned(
-                    top: 90,
-                    left: 20,
-                    child: Expanded(
-                        child: Text("Tanzania Programmer (Hackathon)", style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),),
-                    )
-                  )
+                   AnimatedOpacity(
+                       opacity: angle == 0?1:0,
+                       duration: const Duration(microseconds: 1700),
+                     child:  Positioned(
+                       top: 90,
+                       left: 20,
+                        child: Column(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.all(10),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.location_on, color: Colors.red, size: 34,),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(3),
+                                      color: Colors.orange
+                                    ),
+                                    child: const Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text("Mwl. Nyerere University Hall", style: TextStyle(color: Colors.white),),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Expanded(
+                              child: Text("Tanzania Programmer (Hackathon)", style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),),
+                            )
+                          ],
+                        ),
+                   ),
+                   ),
                 ],
               ),
             ),
