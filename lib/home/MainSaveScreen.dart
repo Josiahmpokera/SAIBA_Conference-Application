@@ -7,51 +7,50 @@ class MainSaveScreen extends StatefulWidget {
   State<MainSaveScreen> createState() => _MainSaveScreenState();
 }
 
-class _MainSaveScreenState extends State<MainSaveScreen>  with TickerProviderStateMixin{
-
-
-  @override
-  void initState() {
-    super.initState();
-    _tabController = TabController(length: _tabView.length, vsync: this);
-  }
-
-  late  TabController  _tabController;
-
-   List<Widget> _tabView = [
-    Tab(
-      child: Text("This Week"),
-    ),
-    Tab(
-      child: Text("This Month"),
-    ),
-    Tab(
-      child: Text("3 Month ago"),
-    ),
-  ];
+class _MainSaveScreenState extends State<MainSaveScreen> {
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-        length: 3,
-        child: Scaffold(
-          appBar: AppBar(
-            elevation: 0,
-            centerTitle: true,
-            title: const Text("SAIBA Conference", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300, color: Colors.black),),
-            backgroundColor: Colors.white,
-            bottom: TabBar(
-              labelColor: Colors.white,
-              unselectedLabelColor: Colors.black,
-              padding: const EdgeInsets.all(10),
-              indicator: BoxDecoration(
-                color: Colors.blue,
-                borderRadius: BorderRadius.circular(8)
-              ),
-              controller: _tabController,
-              tabs: _tabView
-            ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Padding(
+          padding: EdgeInsets.only(
+            top: MediaQuery.of(context).padding.top + kToolbarHeight,
+            left: 40
+          ),
+          child: const Text("Find your \nnext Event. ",
+            style: TextStyle(color: Colors.black,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 1.3,
+                height: 1.3,
+                fontSize: 25),
           ),
         ),
+        const Expanded(
+            child: PageViewWidget()
+        ),
+      ],
+    );
+  }
+}
+
+
+class PageViewWidget extends StatefulWidget {
+  const PageViewWidget({Key? key}) : super(key: key);
+
+  @override
+  State<PageViewWidget> createState() => _PageViewWidgetState();
+}
+
+class _PageViewWidgetState extends State<PageViewWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return PageView(
+      children: [
+        Container(
+          child: Image.asset('assets/picture.jpg', width: MediaQuery.of(context).size.width, fit: BoxFit.cover,),
+        ),
+      ],
     );
   }
 }

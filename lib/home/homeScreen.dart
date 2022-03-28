@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../event/events.dart';
 import 'MainEventScreen.dart';
 import 'MainSaveScreen.dart';
 import 'mainHomeScreen.dart';
@@ -23,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> _screens = const [
     MainSaveScreen(),
-    MainEventScreen(),
+    EventInside(),
     MainSaveScreen(),
   ];
 
@@ -48,8 +49,17 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+     /*appBar: AppBar(
+       elevation: 0,
+       backgroundColor: const Color(0xF1023F48),
+       centerTitle: true,
+       title: const Text("SAIBA Conference", style: TextStyle(fontFamily: 'Economica'),),
+     ),
+     */
+
      bottomNavigationBar: BottomNavigationBar(
        items: _bottomItems,
+       selectedItemColor: const Color(0xF1023F48),
        currentIndex: _selected,
        onTap: onTap,
      ),
