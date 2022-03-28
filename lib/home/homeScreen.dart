@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../event/events.dart';
+import '../schedule.dart';
 import 'MainEventScreen.dart';
 import 'MainSaveScreen.dart';
 import 'mainHomeScreen.dart';
@@ -25,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _screens = const [
     MainSaveScreen(),
     EventInside(),
-    EventInside(),
+    ScheduleScreen(),
   ];
 
   final List<BottomNavigationBarItem>  _bottomItems =  [

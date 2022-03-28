@@ -182,7 +182,7 @@ final _search_engine = TextEditingController();
                           padding: const EdgeInsets.all(10),
                           child: Column(
                             children:  [
-                              const Text("Lorem Ipsum is simply dummy. ", style: TextStyle(fontSize: 17, color: Colors.black, fontWeight: FontWeight.bold),),
+                              const Text("Machine Learning Hackathon. ", style: TextStyle(fontSize: 17, color: Colors.black, fontWeight: FontWeight.bold),),
                               const SizedBox(height: 7,),
                               Row(
                                 children: const [
@@ -237,7 +237,7 @@ final _search_engine = TextEditingController();
                           padding: const EdgeInsets.all(10),
                           child: Column(
                             children:  [
-                              const Text("Lorem Ipsum is simply dummy. ", style: TextStyle(fontSize: 17, color: Colors.black, fontWeight: FontWeight.bold),),
+                              const Text("Javascript Developer Conference. ", style: TextStyle(fontSize: 17, color: Colors.black, fontWeight: FontWeight.bold),),
                               const SizedBox(height: 7,),
                               Row(
                                 children: const [
