@@ -25,23 +25,24 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _screens = const [
     MainSaveScreen(),
     EventInside(),
-    MainSaveScreen(),
+    EventInside(),
   ];
 
-  List<BottomNavigationBarItem>  _bottomItems =  [
-    BottomNavigationBarItem(
+  final List<BottomNavigationBarItem>  _bottomItems =  [
+    const BottomNavigationBarItem(
       label: 'Home',
         icon: Icon(Icons.home_filled),
     ),
 
-    BottomNavigationBarItem(
-      label: 'Events',
-      icon: Icon(Icons.event),
-    ),
 
-    BottomNavigationBarItem(
+    const BottomNavigationBarItem(
       label: 'Saved',
       icon: Icon(Icons.bookmark),
+    ),
+
+    const BottomNavigationBarItem(
+      label: 'Schedule',
+      icon: Icon(Icons.timelapse),
     ),
   ];
 
@@ -58,8 +59,8 @@ class _HomeScreenState extends State<HomeScreen> {
          children: [
            Container(
              color: Colors.pink,
-             child: Padding(
-               padding: const EdgeInsets.all(4.0),
+             child: const Padding(
+               padding: EdgeInsets.all(4.0),
                child: Text("SAIBA", style: TextStyle(fontFamily: 'Economica'),
            ),
              ),
@@ -81,6 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
        items: _bottomItems,
        selectedItemColor: const Color(0xF1023F48),
        currentIndex: _selected,
+       selectedIconTheme: const IconThemeData(size: 40),
        onTap: onTap,
      ),
       body: _screens.elementAt(_selected),

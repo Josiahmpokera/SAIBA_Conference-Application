@@ -103,14 +103,14 @@ class _PageViewWidgetState extends State<PageViewWidget> {
               ..rotateY(angle),
             alignment: Alignment.center,
             child: Material(
-              elevation: 4,
+              elevation: 8,
               child: Stack(
                 children: <Widget>[
                   Image.asset('assets/shot.png',
                     width: MediaQuery.of(context).size.width, fit: BoxFit.cover,),
                    AnimatedOpacity(
                        opacity: angle == 0?1:0,
-                       duration: const Duration(microseconds: 1700),
+                       duration: const Duration(microseconds: 01),
                      child:  Positioned(
                        top: 90,
                        left: 20,
@@ -140,7 +140,7 @@ class _PageViewWidgetState extends State<PageViewWidget> {
                             Container(
                               margin: const EdgeInsets.all(10),
                               child: Row(
-                                children: [
+                                children: const [
                                   Icon(Icons.multitrack_audio_sharp, color: Colors.pink,size: 34,),
                                  Expanded(child:  Text("Dr. Julian Mkayega", style: TextStyle(color: Colors.white, fontSize: 18),
                                  ),
