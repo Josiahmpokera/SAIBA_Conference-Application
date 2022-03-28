@@ -61,7 +61,7 @@ class _SavedScreenState extends State<SavedScreen> {
                    child: RaisedButton(
                    onPressed: (){},
                    color: Colors.black,
-                   child: Text("Book Seat", style: TextStyle(color: Colors.white),),
+                   child: const Text("Book Seat", style: TextStyle(color: Colors.white),),
                  )
                )
               ],

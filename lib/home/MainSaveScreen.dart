@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:saiba_conference_app/home/EventMore.dart';
 
 class MainSaveScreen extends StatefulWidget {
   const MainSaveScreen({Key? key}) : super(key: key);
@@ -89,42 +90,45 @@ class _PageViewWidgetState extends State<PageViewWidget> {
           angle = 1 - angle;
         }
 
-        return Container(
-          padding:  EdgeInsets.only(
-              right: 20,
-              top: 70 - scale *  25,
-              bottom: 20
-          ),
-          child: Transform(
-            transform: Matrix4.identity()..setEntry(
-              3,
-              2,
-              0.001,)
-              ..rotateY(angle),
-            alignment: Alignment.center,
-            child: Material(
-              elevation: 8,
-              child: Stack(
-                children: <Widget>[
-                  Image.asset('assets/shot.png',
-                    width: MediaQuery.of(context).size.width, fit: BoxFit.cover,),
-                   AnimatedOpacity(
-                       opacity: angle == 0?1:0,
-                       duration: const Duration(microseconds: 01),
-                     child:  Positioned(
-                       top: 90,
-                       left: 20,
+        return GestureDetector(
+          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const EventMore())),
+          child: Container(
+            padding:  EdgeInsets.only(
+                right: 20,
+                top: 70 - scale *  25,
+                bottom: 20
+            ),
+            child: Transform(
+              transform: Matrix4.identity()..setEntry(
+                3,
+                2,
+                0.001,)
+                ..rotateY(angle),
+              alignment: Alignment.center,
+              child: Material(
+                elevation: 8,
+                child: Stack(
+                  children: <Widget>[
+                    Image.asset('assets/shot.png',
+                      width: MediaQuery.of(context).size.width, fit: BoxFit.cover,),
+                    AnimatedOpacity(
+                      opacity: angle == 0?1:0,
+                      alwaysIncludeSemantics: true,
+                      duration: const Duration(microseconds: 01),
+                      child:  Positioned(
+                        top: 90,
+                        left: 20,
                         child: Column(
                           children: [
                             Container(
                               margin: const EdgeInsets.all(10),
                               child: Row(
                                 children: [
-                                 const Icon(Icons.location_on, color: Colors.red, size: 34,),
+                                  const Icon(Icons.location_on, color: Colors.red, size: 34,),
                                   Container(
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(3),
-                                      color: const Color(0xF1BE0652)
+                                        borderRadius: BorderRadius.circular(3),
+                                        color: const Color(0xF1BE0652)
                                     ),
                                     child: const Padding(
                                       padding:  EdgeInsets.all(8.0),
@@ -142,17 +146,18 @@ class _PageViewWidgetState extends State<PageViewWidget> {
                               child: Row(
                                 children: const [
                                   Icon(Icons.multitrack_audio_sharp, color: Colors.pink,size: 34,),
-                                 Expanded(child:  Text("Dr. Julian Mkayega", style: TextStyle(color: Colors.white, fontSize: 18),
-                                 ),
+                                  Expanded(child:  Text("Dr. Julian Mkayega", style: TextStyle(color: Colors.white, fontSize: 18),
+                                  ),
                                   ),
                                 ],
                               ),
                             ),
                           ],
                         ),
-                   ),
-                   ),
-                ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
