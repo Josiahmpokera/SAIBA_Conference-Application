@@ -27,178 +27,246 @@ class _EventInsideState extends State<EventInside> {
   }
 // backgroundColor:const  Color(0xFFF0F9F6),
 
+final _search_engine = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF0F9F6),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: const Color(0xF101112C),
-        onPressed: (){},
-        child:const Icon(Icons.bookmark, color: Colors.white,),
-      ),
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            actions: [
-              Container(
-                margin: const EdgeInsets.all(9),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: Colors.white
-                ),
-                child: Center(
-                  child: IconButton(
-                    onPressed: (){},
-                    icon: const Icon(Icons.ios_share, color: Colors.black,),
+      body: ListView(
+        children: [
+           Container(
+            child: Column(
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(top: 10, left: 10, right: 10),
+                  child: TextFormField(
+                    controller: _search_engine,
+                    decoration: const InputDecoration(
+                      filled: true,
+                      border: InputBorder.none,
+                      counterStyle: TextStyle(fontSize: 25),
+                      label: Text("Search Here"),
+                      prefixIcon: Icon(Icons.search_outlined, size: 34,),
+                    ),
                   ),
                 ),
-              ),
-            ],
-            stretch: false,
-            leading: Container(
-              margin: const EdgeInsets.all(9),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Center(
-                child: IconButton(
-                  onPressed: (){},
-                  icon: const Icon(Icons.arrow_back_ios, color: Colors.black,),
-                ),
-              ),
-            ),
-            expandedHeight: 200,
-            flexibleSpace: FlexibleSpaceBar(
-              background: Container(
-                decoration: const BoxDecoration(
-                    image:  DecorationImage(
-                        fit: BoxFit.cover,
-                        image: ExactAssetImage('assets/animation/images.png')
-                    )
-                ),
-              ),
-            ),
-          ),
 
-
-
-          SliverToBoxAdapter(
-            child:  Container(
-              margin: const EdgeInsets.symmetric(vertical: 13, horizontal: 13),
-              child: Row(
-                children: [
-                  const Expanded(child: Text("Discuss Health in Computerized World (Tanzania)", style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold),),
-                  ),
-                  IconButton(
-                    onPressed: (){
-                      _onPress();
-                    },
-                    icon: Icon(Icons.favorite, color: _IconColor,),)
-                ],
-              ),
-            ),
-          ),
-
-          SliverToBoxAdapter(
-            child:  //TIme and Date Container
-            Container(
-              margin: const EdgeInsets.only(top: 10, bottom: 10, left: 13, right: 13),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: const [
-                      Icon(Icons.timelapse),
-                      SizedBox(width: 10,),
-                      Text("9:00 - 12:00 AM")
-                    ],
-                  ),
-
-                  //Date Row
-                  Row(
-                    children: const [
-                      Icon(Icons.calendar_month),
-                      Text("10 Aug 2022")
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-
-          SliverToBoxAdapter(
-            child: Container(
-              margin: const EdgeInsets.symmetric(vertical: 7, horizontal: 13),
-              child: const Text("About", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18),),
-            ),
-          ),
-
-
-          //Description
-          SliverToBoxAdapter(
-            child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 13),
-              child:  const Expanded(
-                child: Text("Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id ex reiciendis pariatur illo culpa ducimus laborum officia recusandae qui ut expedita perspiciatis suscipit, a aliquid tenetur sunt amet. Quibusdam, soluta?", style: TextStyle(color: Colors.blueGrey, fontSize: 18, wordSpacing: 3, height: 1.5),),
-              ),
-            ),
-          ),
-
-
-          //Speaker Details here
-          SliverToBoxAdapter(
-            child:
-            Container(
-                margin: const EdgeInsets.symmetric(vertical: 13, horizontal: 13),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  color: const Color(0xF1100127),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Row(
-                    children: const [
-                      Icon(Icons.multitrack_audio_sharp, color: Colors.white,),
-                      SizedBox(width: 8,),
-                      Text("Samuel Jacob Mmbaga", style: TextStyle(fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold),),
-                      SizedBox(width: 8,),
-                      Text("Host", style: TextStyle(color: Colors.white),
+                Container(
+                  margin: EdgeInsets.only(top: 20),
+                  width: MediaQuery.of(context).size.width,
+                  child:  Row(
+                    children: [
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 5,
+                        child: Column(
+                          children: const [
+                            Text("MON"),
+                            SizedBox(height: 8,),
+                            Text("05", style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold),)
+                          ],
+                        ),
                       ),
+
+                      Flexible(
+                        child:  Container(
+                          width: MediaQuery.of(context).size.width / 1.5,
+                          padding: const EdgeInsets.all(10),
+                          child: Column(
+                            children:  [
+                              const Text("Lorem Ipsum is simply dummy. ", style: TextStyle(fontSize: 17, color: Colors.black, fontWeight: FontWeight.bold),),
+                              const SizedBox(height: 7,),
+                              Row(
+                                children: const [
+                                  Icon(Icons.multitrack_audio_sharp, color: Colors.pink,),
+                                  Text("Dr. Hashim Polepole"),
+                                ],
+                              ),
+                              const SizedBox(height: 7,),
+                              Row(
+                                children: const [
+                                  Icon(Icons.location_on, color: Colors.black,),
+                                  Text("MWl.Nyerere Universoty Hall"),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      const Icon(Icons.arrow_forward)
                     ],
                   ),
-                )
+                ),
+                const SizedBox(height: 10,),
+                Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 20),
+                  height: 2, width: double.infinity, color: Colors.black12,)
+              ],
             ),
           ),
+           Container(
+            child: Column(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 20),
+                  width: MediaQuery.of(context).size.width,
+                  child:  Row(
+                    children: [
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 5,
+                        child: Column(
+                          children: const [
+                            Text("TUE"),
+                            SizedBox(height: 8,),
+                            Text("06", style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold),)
+                          ],
+                        ),
+                      ),
 
-          SliverToBoxAdapter(
-            child: //Map Title and Details
-            Container(
-              margin: const EdgeInsets.symmetric(vertical: 7, horizontal: 13),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: const [
-                      Icon(Icons.location_on_outlined),
-                      Text("Location", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18),),
+                      Flexible(
+                        child:  Container(
+                          width: MediaQuery.of(context).size.width / 1.5,
+                          padding: const EdgeInsets.all(10),
+                          child: Column(
+                            children:  [
+                              const Text("Lorem Ipsum is simply dummy. ", style: TextStyle(fontSize: 17, color: Colors.black, fontWeight: FontWeight.bold),),
+                              const SizedBox(height: 7,),
+                              Row(
+                                children: const [
+                                  Icon(Icons.multitrack_audio_sharp, color: Colors.pink,),
+                                  Text("Dr. Hashim Polepole"),
+                                ],
+                              ),
+                              const SizedBox(height: 7,),
+                              Row(
+                                children: const [
+                                  Icon(Icons.location_on, color: Colors.black,),
+                                  Text("MWl.Nyerere Universoty Hall"),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      const Icon(Icons.arrow_forward)
                     ],
                   ),
-
-                  Row(
-                    children: const [
-                      Icon(Icons.map_rounded, color: Colors.deepOrange,),
-                      Text("UDSM (Nkuruma Hall)")
-                    ],
-                  ),
-                ],
-              ),
+                ),
+                const SizedBox(height: 10,),
+                Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 20),
+                  height: 2, width: double.infinity, color: Colors.black12,)
+              ],
             ),
-
-
           ),
-          //Google Map API Here
+          Container(
+            child: Column(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 20),
+                  width: MediaQuery.of(context).size.width,
+                  child:  Row(
+                    children: [
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 5,
+                        child: Column(
+                          children: const [
+                            Text("WES"),
+                            SizedBox(height: 8,),
+                            Text("07", style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold),)
+                          ],
+                        ),
+                      ),
 
+                      Flexible(
+                        child:  Container(
+                          width: MediaQuery.of(context).size.width / 1.5,
+                          padding: const EdgeInsets.all(10),
+                          child: Column(
+                            children:  [
+                              const Text("Lorem Ipsum is simply dummy. ", style: TextStyle(fontSize: 17, color: Colors.black, fontWeight: FontWeight.bold),),
+                              const SizedBox(height: 7,),
+                              Row(
+                                children: const [
+                                  Icon(Icons.multitrack_audio_sharp, color: Colors.pink,),
+                                  Text("Dr. Hashim Polepole"),
+                                ],
+                              ),
+                              const SizedBox(height: 7,),
+                              Row(
+                                children: const [
+                                  Icon(Icons.location_on, color: Colors.black,),
+                                  Text("MWl.Nyerere Universoty Hall"),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      const Icon(Icons.arrow_forward)
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 10,),
+                Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 20),
+                  height: 2, width: double.infinity, color: Colors.black12,)
+              ],
+            ),
+          ),
+          Container(
+            child: Column(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 20),
+                  width: MediaQuery.of(context).size.width,
+                  child:  Row(
+                    children: [
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 5,
+                        child: Column(
+                          children: const [
+                            Text("THR"),
+                            SizedBox(height: 8,),
+                            Text("08", style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold),)
+                          ],
+                        ),
+                      ),
+
+                      Flexible(
+                        child:  Container(
+                          width: MediaQuery.of(context).size.width / 1.5,
+                          padding: const EdgeInsets.all(10),
+                          child: Column(
+                            children:  [
+                              const Text("Lorem Ipsum is simply dummy. ", style: TextStyle(fontSize: 17, color: Colors.black, fontWeight: FontWeight.bold),),
+                              const SizedBox(height: 7,),
+                              Row(
+                                children: const [
+                                  Icon(Icons.multitrack_audio_sharp, color: Colors.pink,),
+                                  Text("Dr. Hashim Polepole"),
+                                ],
+                              ),
+                              const SizedBox(height: 7,),
+                              Row(
+                                children: const [
+                                  Icon(Icons.location_on, color: Colors.black,),
+                                  Text("MWl.Nyerere Universoty Hall"),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      const Icon(Icons.arrow_forward)
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 10,),
+                Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 20),
+                  height: 2, width: double.infinity, color: Colors.black12,)
+              ],
+            ),
+          ),
         ],
       ),
     );

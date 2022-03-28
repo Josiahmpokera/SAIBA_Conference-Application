@@ -84,6 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
        currentIndex: _selected,
        selectedIconTheme: const IconThemeData(size: 40),
        onTap: onTap,
+       type: BottomNavigationBarType.fixed,
      ),
       body: _screens.elementAt(_selected),
     );
