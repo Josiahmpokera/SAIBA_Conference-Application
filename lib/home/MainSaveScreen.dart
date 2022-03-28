@@ -20,62 +20,24 @@ class _MainSaveScreenState extends State<MainSaveScreen>  with TickerProviderSta
 
    List<Widget> _tabView = [
     Tab(
-
-       icon: Icon(Icons.event,color: Colors.blue,),
-      child: Text("Jan", style: TextStyle(color: Colors.white),),
+      child: Text("This Week"),
     ),
     Tab(
-      icon: Icon(Icons.event,color: Colors.blue,),
-      child: Text("Feb", style: TextStyle(color: Colors.black),),
+      child: Text("This Month"),
     ),
     Tab(
-      icon: Icon(Icons.event,color: Colors.blue,),
-      child: Text("Mar", style: TextStyle(color: Colors.black),),
-    ),
-    Tab(
-      icon: Icon(Icons.event,color: Colors.blue,),
-      child: Text("Apr", style: TextStyle(color: Colors.black),),
-    ),
-    Tab(
-      icon: Icon(Icons.event,color: Colors.blue,),
-      child: Text("May", style: TextStyle(color: Colors.black),),
-    ),
-    Tab(
-      icon: Icon(Icons.event,color: Colors.blue,),
-      child: Text("Jun", style: TextStyle(color: Colors.black),),
-    ),
-    Tab(
-      icon: Icon(Icons.event,color: Colors.blue,),
-      child: Text("Jul", style: TextStyle(color: Colors.black),),
-    ),
-    Tab(
-      icon: Icon(Icons.event,color: Colors.blue,),
-      child: Text("Aug", style: TextStyle(color: Colors.black),),
-    ),
-    Tab(
-      icon: Icon(Icons.event,color: Colors.blue,),
-      child: Text("Sep", style: TextStyle(color: Colors.black),),
-    ),
-    Tab(
-      icon: Icon(Icons.event,color: Colors.blue,),
-      child: Text("Oct", style: TextStyle(color: Colors.black),),
-    ),
-    Tab(
-      icon: Icon(Icons.event,color: Colors.blue,),
-      child: Text("Nov", style: TextStyle(color: Colors.black),),
-    ),
-    Tab(
-      icon: Icon(Icons.event,color: Colors.blue,),
-      child: Text("Dec", style: TextStyle(color: Colors.black),),
+      child: Text("3 Month ago"),
     ),
   ];
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: 12,
+        length: 3,
         child: Scaffold(
           appBar: AppBar(
-            title: const Text("SAIBA Conference", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+            elevation: 0,
+            centerTitle: true,
+            title: const Text("SAIBA Conference", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300, color: Colors.black),),
             backgroundColor: Colors.white,
             bottom: TabBar(
               labelColor: Colors.white,
@@ -86,7 +48,6 @@ class _MainSaveScreenState extends State<MainSaveScreen>  with TickerProviderSta
                 borderRadius: BorderRadius.circular(8)
               ),
               controller: _tabController,
-              isScrollable: true,
               tabs: _tabView
             ),
           ),
