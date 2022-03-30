@@ -16,6 +16,9 @@ class _EventMoreState extends State<EventMore> {
         title: const Flexible(child: Text("Tanzania Programmer Hackathon 2022"),),
         backgroundColor: const Color(0xF1023F48),
       ),
+      body:const Center(
+        child: Text("No Data Available"),
+      ),
     );
   }
 }

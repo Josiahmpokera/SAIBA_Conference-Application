@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Colors.white,
      appBar: AppBar(
        elevation: 0,
-       backgroundColor: const Color(0xF1023F48),
+       backgroundColor:  Colors.white,
        centerTitle: true,
        title:  Row(
          mainAxisAlignment: MainAxisAlignment.center,
@@ -68,16 +68,21 @@ class _HomeScreenState extends State<HomeScreen> {
            ),
            SizedBox(width: 3,),
            Container(
-             child: Text("Conference", style: TextStyle(fontFamily: 'Economica'),),
+             child: Text("Conference", style: TextStyle(fontFamily: 'Economica', color: Colors.black),),
            ),
          ],
        ),
+       leading: IconButton(onPressed: (){}, icon: Icon(Icons.segment, color: Colors.black,)),
        actions: [
          IconButton(onPressed: (){},
-             icon: const Icon(Icons.settings, color: Colors.white,))
+             icon: const Icon(Icons.settings, color: Colors.black,),
+         ),
+
+         IconButton(onPressed: (){},
+           icon: const Icon(Icons.notifications, color: Colors.black,),
+         ),
        ],
      ),
-
 
      bottomNavigationBar: BottomNavigationBar(
        items: _bottomItems,
